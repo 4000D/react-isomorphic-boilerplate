@@ -17,6 +17,7 @@
   "dependencies": {
     "jquery": "^3.1.1",
     "underscore": "^1.8.3",
-    "font-awesome": "^4.6.3"
+    "font-awesome": "^4.6.3",
+    "materialize": "^0.97.7"
   }
 }

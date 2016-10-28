@@ -5,9 +5,6 @@ import gutil from 'gulp-util'; // for logging
 // bower
 import bower from 'gulp-bower';
 
-// bootstrap
-import bsConfig from 'gulp-bootstrap-configurator';
-
 // css
 import cleanCSS from 'gulp-clean-css';
 import sass from 'gulp-sass';
@@ -99,28 +96,6 @@ gulp.task('webpack-express', () => {
     .pipe( webpack(webpackExpressConfig) )
     .pipe( cache.cache() )
     .pipe( gulp.dest(DEST.EXPRESS) )
-});
-
-gulp.task('bootstrap', ['bootstrap-css', 'bootstrap-js'], () => {
-  // Do nothing. Just chaining
-})
-
-gulp.task('bootstrap-css', () => {
-  return gulp.src('./bootstrap.config.json')
-    .pipe( bsConfig.css({
-      compress: true,
-      bower: false, // use node_modules/bootstrap
-    }) )
-    .pipe( gulp.dest(DEST.CSS) );
-});
-
-gulp.task('bootstrap-js', () => {
-  return gulp.src('./bootstrap.config.json')
-    .pipe( bsConfig.js({
-      compress: true,
-      bower: false, // use node_modules/bootstrap
-    }) )
-    .pipe( gulp.dest(DEST.JS) );
 });
 
 gulp.task('css', () => {
@@ -230,7 +205,7 @@ gulp.task('default', [
   'clean', 'bower',
   'webpack-browser', 'webpack-react', 'webpack-express',
   'css', 'sass', 'fonts', 'google-web-fonts',
-  'html', 'images', 'bootstrap',
+  'html', 'images',
   'start', 'watch',
   // 'browser-sync',
 ], () => {
