@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, IndexRoute, Link } from 'react-router';
 import { TodoApp } from './components';
 
+import { facebook_login, logout } from '../lib/firebase'
+
 const App = ({ children }) => (
 	<div>
 		Links:
@@ -12,6 +14,8 @@ const App = ({ children }) => (
 		{' '}
 		<Link to="/todos">Todos</Link>
 		{ children }
+		<button onClick={facebook_login}>FB login</button>
+		<button onClick={logout}>logout</button>
 	</div>
 );
 

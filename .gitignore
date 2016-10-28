@@ -4,3 +4,7 @@ bower_components
 public/**/*
 bin/
 .gulp-cache
+.tern-project
+firebase.config.js
+.firebaserc
+firebase.json
